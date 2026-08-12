@@ -1,11 +1,7 @@
-import Projects from "./components/Projects";
+import Home from "./pages/Home";
 
 function App() {
-    return (
-        <>
-            <Projects />
-        </>
-    );
+    return <Home />;
 }
 
 export default App;
