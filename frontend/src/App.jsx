@@ -1,7 +1,13 @@
 import Home from "./pages/Home";
+import ScrollProgress from "./components/ScrollProgress";
 
 function App() {
-    return <Home />;
+    return (
+        <>
+            <ScrollProgress />
+            <Home />
+        </>
+    );
 }
 
 export default App;

@@ -12,3 +12,32 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ProjectMedia(models.Model):
+    MEDIA_TYPES = (
+        ("image", "Image"),
+        ("video", "Video"),
+    )
+
+    project = models.ForeignKey(
+        Project,
+        on_delete=models.CASCADE,
+        related_name="media"
+    )
+    media_type = models.CharField(
+        max_length=10,
+        choices=MEDIA_TYPES
+    )
+    file = models.FileField(upload_to="projects/")
+    caption = models.CharField(
+        max_length=255,
+        blank=True
+    )
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "id"]
+
+    def __str__(self):
+        return f"{self.project.title} - {self.media_type}"

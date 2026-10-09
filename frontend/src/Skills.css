@@ -1,0 +1,120 @@
+.section-skills {
+    padding: 100px 7%;
+    background: var(--bg);
+    position: relative;
+}
+
+.skills-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.skill-group {
+    padding: 26px 22px;
+
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition-delay: calc(var(--stagger, 0) * 0.1s);
+}
+
+.skill-group:hover {
+    transform: translateY(-6px);
+    border-color: rgba(100, 149, 237, 0.35);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.skill-group h3 {
+    font-family: 'Sora', 'Roboto', sans-serif;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    padding: 6px 12px;
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+
+    color: var(--text-secondary);
+    font-size: 11.5px;
+    font-weight: 500;
+
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-group:hover .skill-tag {
+    border-color: var(--border-strong);
+}
+
+.skill-tag:hover {
+    background: rgba(100, 149, 237, 0.16);
+    color: var(--cornflower);
+    border-color: rgba(100, 149, 237, 0.4);
+}
+
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .section-skills {
+        padding: 70px 20px;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.star {
+    position: absolute;
+    color: var(--orange);
+    animation: spin-sparkle 8s linear infinite;
+}
+
+.star1 {
+    left: 10%;
+    top: 120px;
+    font-size: 25px;
+}
+
+.star2 {
+    right: 14%;
+    top: 170px;
+    font-size: 50px;
+}
+
+.star3 {
+    left: 25%;
+    bottom: 100px;
+    font-size: 18px;
+}
+
+.star4 {
+    right: 30%;
+    top: 80px;
+    font-size: 22px;
+}
+
+.star5 {
+    right: 8%;
+    bottom: 80px;
+    font-size: 15px;
+}
