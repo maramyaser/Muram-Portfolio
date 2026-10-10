@@ -1,0 +1,122 @@
+.not-found {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 40px 24px;
+    background: #0b0b18;
+    color: #f4f0ff;
+    text-align: center;
+}
+
+.not-found-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 620px;
+}
+
+.not-found-moon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+    color: #c7b8ff;
+    filter: drop-shadow(0 0 22px #9980ff66);
+}
+
+.not-found-label {
+    color: #b8a4ff;
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
+    font-weight: 700;
+}
+
+.not-found h1 {
+    margin: 12px 0;
+    font-size: clamp(6rem, 20vw, 10rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.08em;
+}
+
+.not-found h1 span {
+    color: #a78bfa;
+}
+
+.not-found h2 {
+    font-size: clamp(1.35rem, 4vw, 2rem);
+    margin: 20px 0 12px;
+}
+
+.not-found-description {
+    max-width: 430px;
+    margin: 0 auto 30px;
+    color: #b5b2c9;
+    line-height: 1.8;
+}
+
+.not-found-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border: 1px solid #a78bfa;
+    border-radius: 999px;
+    background: #a78bfa;
+    color: #171127;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.not-found-home:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px #a78bfa44;
+}
+
+.not-found-stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    color: #c7b8ff;
+}
+
+.not-found-stars .star {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+}
+
+.star-one {
+    top: 20%;
+    left: 20%;
+}
+
+.star-two {
+    top: 30%;
+    right: 18%;
+}
+
+.star-three {
+    bottom: 20%;
+    left: 30%;
+}
+
+.not-found-footer {
+    margin-top: 56px;
+    font-size: 0.85rem;
+    color: #858198;
+}
+
+.not-found-footer span {
+    color: #c7b8ff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .not-found-home {
+        transition: none;
+    }
+}
