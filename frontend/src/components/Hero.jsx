@@ -229,8 +229,8 @@ function Hero() {
                             <span>View Projects</span>
                         </a>
 
-                        <a href="/cv.pdf" className="secondary-button magnetic-button">
-                            <span>Download CV</span>
+                        <a href="/CV.pdf" className="secondary-button magnetic-button" target="_blank" rel="noopener noreferrer">
+                            <span>View CV</span>
                         </a>
                     </div>
                 </div>
