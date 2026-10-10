@@ -5,7 +5,6 @@ import "../Contact.css";
 const SOCIALS = [
     { name: "GitHub", href: "https://github.com/maramyaser" },
     { name: "LinkedIn", href: "https://www.linkedin.com/in/muram-yaser-157326322" },
-    { name: "Email", href: "maramy636@gmail.com" },
 ];
 
 function Contact() {
@@ -29,7 +28,10 @@ function Contact() {
                     collaborations, or just talking about software and AI.
                 </p>
 
-                <a href="mailto:you@example.com" className="contact-cta magnetic-button">
+                <a
+                   href="mailto:maramy636@gmail.com?subject=Hello%20Muram"
+                   className="contact-cta magnetic-button"
+                 >
                     <span>Say Hello</span>
                 </a>
 
@@ -47,9 +49,6 @@ function Contact() {
                 </div>
             </div>
 
-            <footer className="footer-note">
-                <span>© {new Date().getFullYear()} Muram. Built with React.</span>
-            </footer>
         </section>
     );
 }
