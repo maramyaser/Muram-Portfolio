@@ -25,15 +25,27 @@ class ProjectMedia(models.Model):
         on_delete=models.CASCADE,
         related_name="media"
     )
+
     media_type = models.CharField(
         max_length=10,
         choices=MEDIA_TYPES
     )
-    file = models.FileField(upload_to="projects/")
+
+    file = models.FileField(
+        upload_to="projects/",
+        blank=True
+    )
+
+    url = models.URLField(
+        max_length=1000,
+        blank=True
+    )
+
     caption = models.CharField(
         max_length=255,
         blank=True
     )
+
     order = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -41,3 +53,22 @@ class ProjectMedia(models.Model):
 
     def __str__(self):
         return f"{self.project.title} - {self.media_type}"
+
+
+class ProjectLink(models.Model):
+    project = models.ForeignKey(
+        Project,
+        on_delete=models.CASCADE,
+        related_name="links"
+    )
+
+    label = models.CharField(max_length=100)
+    url = models.URLField()
+
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "id"]
+
+    def __str__(self):
+        return f"{self.project.title} - {self.label}"
