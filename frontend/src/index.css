@@ -601,9 +601,9 @@ body::before {
 
 .hero-profile {
     position: absolute;
-    width: 290px;
+    width: 500px;
     height: auto;
-    left: 55%;
+    left: 50%;
     bottom: -90px;
     transform: translateX(-50%);
     z-index: 10;
