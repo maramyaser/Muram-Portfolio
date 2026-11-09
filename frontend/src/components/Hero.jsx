@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import profileImage from "../assets/profile.png";
 import { useReveal } from "../hooks/useReveal";
 
-const ROLES = ["Software Engineer", "AI & ML Enthusiast", "Full Stack Developer"];
+const ROLES = ["Software Engineer", "Passionate Learner", "Full Stack Developer"];
 
 function Hero() {
     const [roleIndex, setRoleIndex] = useState(0);

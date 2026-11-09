@@ -1,4 +1,3 @@
-import { Link } from "react";
 import { ArrowLeft, Moon, Sparkles } from "lucide-react";
 import "../NotFound.css";
 

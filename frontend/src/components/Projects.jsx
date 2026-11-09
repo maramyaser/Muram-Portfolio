@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import api from "../services/api";
+import { useState } from "react";
+import { PROJECTS } from "../data/projects";
 import { useReveal } from "../hooks/useReveal";
 import { useTilt } from "../hooks/useTilt";
 import "../Projects.css";
@@ -244,39 +244,9 @@ function ProjectCard({ project, index, featured, stagger }) {
     );
 }
 
-function ProjectSkeleton({ featured }) {
-    return (
-        <div
-            className={`project-box project-box-skeleton ${featured ? "featured" : ""}`}
-            aria-hidden="true"
-        >
-            <div className="skeleton-block skeleton-media"></div>
-            <div className="project-body">
-                <div className="skeleton-block skeleton-title"></div>
-                <div className="skeleton-block skeleton-text"></div>
-                <div className="skeleton-block skeleton-text short"></div>
-            </div>
-        </div>
-    );
-}
-
 function Projects() {
-    const [projects, setProjects] = useState([]);
-    const [status, setStatus] = useState("loading"); // loading | success | error
     const [headerRef, headerVisible] = useReveal();
-
-    useEffect(() => {
-        api
-            .get("projects/")
-            .then((response) => {
-                setProjects(response.data);
-                setStatus("success");
-            })
-            .catch((error) => {
-                console.error("Error fetching projects:", error);
-                setStatus("error");
-            });
-    }, []);
+    const projects = PROJECTS;
 
     return (
         <section id="projects" className="projects-section">
@@ -293,34 +263,16 @@ function Projects() {
                 <h2>Selected Projects</h2>
             </div>
 
-            {status === "loading" && (
-                <div className="projects-list">
-                    <ProjectSkeleton featured />
-                    <ProjectSkeleton />
-                    <ProjectSkeleton />
-                </div>
-            )}
-
-            {status === "error" && (
-                <p className="projects-empty">
-                    Couldn't load projects right now — please check back shortly.
-                </p>
-            )}
-
-            {status === "success" && projects.length === 0 && (
-                <p className="projects-empty">
-                    New projects are on the way — check back soon.
-                </p>
-            )}
-
-            {status === "success" && projects.length > 0 && (
+            {projects.length === 0 ? (
+                <p className="projects-empty">New projects are on the way.</p>
+            ) : (
                 <div className="projects-list">
                     {projects.map((project, index) => (
                         <ProjectCard
                             key={project.id}
                             project={project}
                             index={index}
-                            featured={index === 0}
+                            featured={project.featured || (index === 0 && !projects.some(p => p.featured))}
                             stagger={index === 0 ? 0 : (index - 1) % 2}
                         />
                     ))}

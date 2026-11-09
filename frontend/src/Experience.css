@@ -1,447 +1,179 @@
-/* =========================================
-   EXPERIENCE / CONSTELLATION
-========================================= */
-
+/* Experience & Certifications: content-first, scalable constellation layout. */
 .section-experience {
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 110px 7% 130px;
-
-    background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  padding: 110px 7% 130px;
+  background: var(--bg);
 }
-
-
-/* =========================================
-   HEADER
-========================================= */
-
 .section-experience .section-title {
-    position: relative;
-    z-index: 5;
-
-    text-align: center;
-
-    margin-bottom: 65px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  margin-bottom: 65px;
 }
-
 .section-experience .section-title p {
-    margin-bottom: 10px;
-
-    color: var(--steel);
-
-    font-size: 11px;
-    font-weight: 600;
-
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
+  margin-bottom: 10px;
+  color: var(--steel);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
-
 .section-experience .section-title h2 {
-    margin: 0;
-
-    color: var(--text-primary);
-
-    font-size: clamp(40px, 5vw, 58px);
-
-    font-weight: 700;
-
-    letter-spacing: -2px;
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 700;
+  letter-spacing: -2px;
 }
-
 .journey-subtitle {
-    display: block;
-
-    max-width: 500px;
-
-    margin: 14px auto 0;
-
-    color: var(--text-secondary);
-
-    font-size: 13px;
-
-    line-height: 1.6;
+  display: block;
+  max-width: 500px;
+  margin: 14px auto 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
-
-/* =========================================
-   SPACE
-========================================= */
-
+/* No absolute card positions or fixed height. Any number of records works. */
 .journey-space {
-    position: relative;
-
-    width: 100%;
-    max-width: 1100px;
-
-    height: 680px;
-
-    margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 34px 48px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 12px 0 16px;
 }
-
-
-/* =========================================
-   CONSTELLATION LINES
-========================================= */
-
-.constellation-line {
-    position: absolute;
-
-    height: 1px;
-
-    transform-origin: left center;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(100, 149, 237, 0.35),
-        transparent
-    );
-
-    opacity: 0.55;
-
-    pointer-events: none;
-}
-
-
-/* line between node 1 and 2 */
-
-.line-1 {
-    width: 280px;
-
-    left: 24%;
-    top: 23%;
-
-    transform: rotate(18deg);
-}
-
-
-/* line between node 2 and 3 */
-
-.line-2 {
-    width: 300px;
-
-    left: 47%;
-    top: 34%;
-
-    transform: rotate(145deg);
-}
-
-
-/* line between node 3 and 4 */
-
-.line-3 {
-    width: 270px;
-
-    left: 46%;
-    top: 61%;
-
-    transform: rotate(18deg);
-}
-
-
-/* line between node 4 and 5 */
-
-.line-4 {
-    width: 280px;
-
-    left: 23%;
-    top: 67%;
-
-    transform: rotate(-22deg);
-}
-
-
-/* line between node 5 and 6 */
-
-.line-5 {
-    width: 300px;
-
-    left: 43%;
-    top: 73%;
-
-    transform: rotate(-35deg);
-}
-
-
-/* =========================================
-   NODE
-========================================= */
-
 .journey-node {
-    position: absolute;
-
-    width: 300px;
-
-    opacity: 0;
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+  transition-delay: calc(min(var(--stagger, 0), 5) * 60ms);
 }
-
-.journey-node.in-view {
-    opacity: 1;
-}
-
-
-/* =========================================
-   POSITIONS
-========================================= */
-
-.node-1 {
-    left: 5%;
-    top: 8%;
-
-    transform: translateY(25px);
-}
-
-.node-2 {
-    left: 55%;
-    top: 17%;
-
-    transform: translateY(25px);
-}
-
-.node-3 {
-    left: 30%;
-    top: 36%;
-
-    transform: translateY(25px);
-}
-
-.node-4 {
-    left: 63%;
-    top: 48%;
-
-    transform: translateY(25px);
-}
-
-.node-5 {
-    left: 7%;
-    top: 60%;
-
-    transform: translateY(25px);
-}
-
-.node-6 {
-    left: 43%;
-    top: 76%;
-
-    transform: translateY(25px);
-}
-
-.journey-node.in-view {
-    transform: translateY(0);
-}
-
-
-/* =========================================
-   STAR
-========================================= */
-
-.journey-star {
-    position: absolute;
-
-    left: -18px;
-    top: 25px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 38px;
-    height: 38px;
-
-    border-radius: 50%;
-
-    background: rgba(100, 149, 237, 0.08);
-
-    border: 1px solid rgba(100, 149, 237, 0.35);
-
-    box-shadow:
-        0 0 15px rgba(100, 149, 237, 0.25),
-        0 0 35px rgba(100, 149, 237, 0.08);
-
-    z-index: 3;
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        background 0.35s ease;
-}
-
-.journey-star span {
-    color: var(--cornflower);
-
-    font-size: 17px;
-
-    text-shadow:
-        0 0 8px rgba(100, 149, 237, 0.8);
-}
-
-
-/* Experience star */
-
-.journey-node.experience .journey-star {
-    border-color: rgba(233, 148, 85, 0.5);
-
-    background: rgba(233, 148, 85, 0.08);
-
-    box-shadow:
-        0 0 18px rgba(233, 148, 85, 0.3),
-        0 0 40px rgba(233, 148, 85, 0.08);
-}
-
-.journey-node.experience .journey-star span {
-    color: var(--orange);
-
-    text-shadow:
-        0 0 10px rgba(233, 148, 85, 0.8);
-}
-
-
-/* =========================================
-   CARD
-========================================= */
-
+.journey-node.in-view { opacity: 1; transform: translateY(0); }
 .journey-card {
-    position: relative;
-
-    margin-left: 5px;
-
-    padding: 22px 24px 23px;
-
-    background: rgba(255, 255, 255, 0.025);
-
-    border: 1px solid var(--border);
-
-    border-radius: 18px;
-
-    backdrop-filter: blur(10px);
-
-    transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease,
-        background 0.35s ease;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  margin-left: 17px;
+  padding: 24px 26px 25px 32px;
+  background: rgba(255,255,255,.025);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  overflow-wrap: anywhere;
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease, background .35s ease;
 }
-
-
-/* connector from star to card */
-
+/* A subtle constellation path that doesn't overlap any cards. */
+.journey-space::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(100,149,237,.28) 12%, rgba(233,148,85,.22) 88%, transparent);
+  pointer-events: none;
+}
+.journey-star {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(100,149,237,.08);
+  border: 1px solid rgba(100,149,237,.35);
+  box-shadow: 0 0 15px rgba(100,149,237,.25), 0 0 35px rgba(100,149,237,.08);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.journey-star span {
+  color: var(--cornflower);
+  font-size: 17px;
+  text-shadow: 0 0 8px rgba(100,149,237,.8);
+}
+.journey-node.experience .journey-star {
+  border-color: rgba(233,148,85,.5);
+  background: rgba(233,148,85,.08);
+  box-shadow: 0 0 18px rgba(233,148,85,.3), 0 0 40px rgba(233,148,85,.08);
+}
+.journey-node.experience .journey-star span {
+  color: var(--orange);
+  text-shadow: 0 0 10px rgba(233,148,85,.8);
+}
 .journey-card::before {
-    content: "";
-
-    position: absolute;
-
-    left: -23px;
-    top: 43px;
-
-    width: 22px;
-    height: 1px;
-
-    background: rgba(100, 149, 237, 0.3);
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 43px;
+  width: 16px;
+  height: 1px;
+  background: rgba(100,149,237,.3);
 }
-
-
-/* hover */
-
 .journey-node:hover .journey-card {
-    transform: translateY(-5px);
-
-    background: rgba(255, 255, 255, 0.045);
-
-    border-color: rgba(100, 149, 237, 0.35);
-
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.25),
-        0 0 25px rgba(100, 149, 237, 0.06);
+  transform: translateY(-5px);
+  background: rgba(255,255,255,.045);
+  border-color: rgba(100,149,237,.35);
+  box-shadow: 0 20px 50px rgba(0,0,0,.25), 0 0 25px rgba(100,149,237,.06);
 }
-
 .journey-node:hover .journey-star {
-    transform: scale(1.2);
-
-    box-shadow:
-        0 0 20px rgba(100, 149, 237, 0.5),
-        0 0 50px rgba(100, 149, 237, 0.15);
+  transform: scale(1.12);
+  box-shadow: 0 0 20px rgba(100,149,237,.5), 0 0 50px rgba(100,149,237,.15);
 }
-
-
-/* =========================================
-   CARD CONTENT
-========================================= */
-
 .journey-card-top {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 10px;
-
-    margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 12px;
 }
-
 .journey-type {
-    color: var(--cornflower);
-
-    font-size: 9px;
-    font-weight: 700;
-
-    letter-spacing: 1.8px;
-
-    text-transform: uppercase;
+  color: var(--cornflower);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
 }
-
-.journey-node.experience .journey-type {
-    color: var(--orange);
-}
-
+.journey-node.experience .journey-type { color: var(--orange); }
 .journey-period {
-    color: var(--steel);
-
-    font-size: 10px;
-    font-weight: 600;
-
-    letter-spacing: 0.8px;
+  color: var(--steel);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .8px;
 }
-
 .journey-card h3 {
-    margin: 0 0 5px;
-
-    color: var(--text-primary);
-
-    font-size: 18px;
-    font-weight: 700;
-
-    line-height: 1.25;
+  margin: 0 0 6px;
+  color: var(--text-primary);
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  line-height: 1.3;
 }
-
 .journey-organization {
-    display: block;
-
-    margin-bottom: 10px;
-
-    color: var(--cornflower);
-
-    font-size: 12px;
-    font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+  color: var(--cornflower);
+  font-size: 13px;
+  font-weight: 600;
 }
-
 .journey-card p {
-    margin: 0;
-
-    color: var(--text-secondary);
-
-    font-size: 12px;
-
-    line-height: 1.65;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
 }
-
 
 /* =========================================
    BACKGROUND STARS
@@ -521,138 +253,23 @@
 }
 
 
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .space-star {
-        animation: none;
-    }
-
-    .journey-node {
-        transition: none;
-    }
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
 
 @media (max-width: 850px) {
-
-    .journey-space {
-        height: 760px;
-    }
-
-    .journey-node {
-        width: 270px;
-    }
-
-    .node-1 {
-        left: 0;
-    }
-
-    .node-2 {
-        left: 48%;
-    }
-
-    .node-3 {
-        left: 18%;
-    }
-
-    .node-4 {
-        left: 50%;
-    }
-
-    .node-5 {
-        left: 0;
-    }
-
-    .node-6 {
-        left: 40%;
-    }
-
+  .journey-space { grid-template-columns: minmax(0, 1fr); max-width: 650px; gap: 24px; }
+  .journey-space::before { left: 18px; }
 }
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
 @media (max-width: 600px) {
-
-    .section-experience {
-        padding: 75px 20px 90px;
-    }
-
-    .section-experience .section-title h2 {
-        font-size: 38px;
-    }
-
-    .journey-subtitle {
-        font-size: 12px;
-    }
-
-    .journey-space {
-        height: auto;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 20px;
-
-        padding: 25px 0;
-    }
-
-    .journey-node {
-        position: relative;
-
-        left: auto !important;
-        top: auto !important;
-
-        width: 100%;
-
-        transform: translateY(20px);
-    }
-
-    .journey-node.in-view {
-        transform: translateY(0);
-    }
-
-    .journey-star {
-        left: -2px;
-        top: 23px;
-
-        width: 30px;
-        height: 30px;
-    }
-
-    .journey-card {
-        margin-left: 18px;
-
-        padding: 18px 18px 19px;
-    }
-
-    .journey-card::before {
-        left: -19px;
-
-        width: 18px;
-    }
-
-    .constellation-line {
-        display: none;
-    }
-
-    .space-star-1 {
-        left: 5%;
-    }
-
-    .space-star-2 {
-        right: 5%;
-    }
-
+  .section-experience { padding: 75px 20px 90px; }
+  .section-experience .section-title { margin-bottom: 36px; }
+  .section-experience .section-title h2 { font-size: clamp(31px, 8vw, 38px); }
+  .journey-subtitle { font-size: 12px; }
+  .journey-space { gap: 20px; padding: 15px 0; }
+  .journey-star { width: 32px; height: 32px; top: 22px; }
+  .journey-space::before { left: 16px; }
+  .journey-card { margin-left: 14px; padding: 19px 18px 20px 27px; }
+  .journey-card p { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .space-star { animation: none; }
+  .journey-node, .journey-card, .journey-star { transition: none; transition-delay: 0ms; }
 }
