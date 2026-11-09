@@ -11,7 +11,7 @@ const JOURNEY = [
         title: "Best Women speaker",
         organization: "INES Ruhengeri",
         description:
-            "Contributed to a production web application, built features end-to-end, and worked with a small team on planning and code review.",
+            "Best Women speaker award",
         position: "node-1",
     },
 
@@ -22,18 +22,18 @@ const JOURNEY = [
         title: "Full Stack Machine Learning t",
         organization: "Udemy",
         description:
-            "Certificate focused on Django REST Framework, Reac",
+            "Certificate focused on Django REST Framework, React",
         position: "node-2",
     },
 
     {
         id: 3,
         type: "experience",
-        period: "2024 — Present",
-        title: "Freelance Full-Stack Developer",
-        organization: "Self-employed",
+        period: "2026",
+        title: "Full-Stack Developer — Opportune",
+        organization: "Independent Project",
         description:
-            "Designed and developed web applications, handling frontend development, backend APIs, databases, and deployment.",
+            "Designed and developed an AI-powered opportunity tracking platform using React, Django REST Framework, PostgreSQL, and AI-powered information extraction. Implemented authentication, opportunity management, and email reminder features.",
         position: "node-3",
     },
 
@@ -52,21 +52,20 @@ const JOURNEY = [
         id: 5,
         type: "experience",
         period: "2026 — Present",
-        title: "Software Engineering Student",
-        organization: "INES Ruhengeri",
+        title: "Research-Oriented Prototype",
         description:
-            "Coursework and personal projects spanning software development, artificial intelligence, databases, and systems fundamentals.",
+            "Developing a computer vision-based interactive learning prototype that detects hand gestures and supports object manipulation on projected surfaces, with plans for multilingual educational content.",
         position: "node-5",
     },
 
     {
         id: 6,
-        type: "certificate",
-        period: "2024",
-        title: "Programming & Software Development",
-        organization: "Certification Provider",
+        type: "experience",
+        period: "2025 -2026",
+        title: "Head of Media / Media Secretary — Sudanese Students Association",
+        organization: "INES-Ruhengeri · Volunteer Leadership",
         description:
-            "Certificate demonstrating practical programming and software development knowledge.",
+            "Led digital communication and media production for the Sudanese student community. Contributed to growing social platforms to over 2,300 combined followers and community members while supporting student engagement and integration.",
         position: "node-6",
     },
 ];

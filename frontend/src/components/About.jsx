@@ -3,8 +3,8 @@ import { useReveal } from "../hooks/useReveal";
 
 const SKILLS = [
     { title: "Software", subtitle: "Engineering" },
-    { title: "AI & ML", subtitle: "Development" },
-    { title: "Full Stack", subtitle: "Development" },
+    { title: "Full stack", subtitle: "Developer" },
+    { title: "Passionate", subtitle: " Learner" },
 ];
 
 function About() {
