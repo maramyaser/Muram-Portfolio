@@ -25,8 +25,8 @@ export const PROJECTS = [
     github_url: "https://github.com/maramyaser/Opportune",
     live_url: "https://opportune.site",
     featured: false,
-    media: [{ id: "walkthrough", media_type: "video", file: "/media/projects/opportune/opportune.mp4" }],
-    links: [],
+    media: [],
+    links: [ { id: "demo", media_type: "video", url: "https://drive.google.com/file/d/16rNw0Lm911g-ivaZUDvsAfr5GxRAlzV3/view?usp=drive_link", caption: "Demo" }],
   },
   {
     id: "stock-prediction",
