@@ -13,8 +13,8 @@ export const PROJECTS = [
     live_url: "",
     featured: true,
     media: [ { id: "walkthrough", media_type: "image", file: "/media/projects/visionbridge/hult.JPG" }], // Add images/videos using the examples above
-    links: [{ id: "demo", media_type: "video", url: "https://youtu.be/Pb3vPxOt0W8?si=D-PH3gTwseLE4jJU", caption: "Demo" },
-      { id: "demo", media_type: "video", url: "https://youtu.be/_O7dpuWTKOI?si=diXhTgqMc3LqbuKq", caption: "Prototype" }
+    links: [{ id: "demo", label:"Explanation", media_type: "video", url: "https://youtu.be/Pb3vPxOt0W8?si=D-PH3gTwseLE4jJU", caption: "Demo" },
+      { id: "demo", label:"Prototype", media_type: "video", url: "https://youtu.be/_O7dpuWTKOI?si=diXhTgqMc3LqbuKq", caption: "Prototype" }
     ],
   },
   {
@@ -25,8 +25,8 @@ export const PROJECTS = [
     github_url: "https://github.com/maramyaser/Opportune",
     live_url: "https://opportune.site",
     featured: false,
-    media: [{ id: "photo-1", media_type: "image", file: "/media/projects/opportune/oppo.png", caption: "Prototype" }],
-    links: [ { id: "demo", media_type: "video", url: "https://drive.google.com/file/d/16rNw0Lm911g-ivaZUDvsAfr5GxRAlzV3/view?usp=drive_link", caption: "Demo" }],
+    media: [{ id: "photo-1", media_type: "image", file: "/media/projects/opportune/oppo.png", caption: "" }],
+    links: [ { id: "demo", label:"video", media_type: "video", url: "https://drive.google.com/file/d/16rNw0Lm911g-ivaZUDvsAfr5GxRAlzV3/view?usp=drive_link", caption: "Demo" }],
   },
   {
     id: "stock-prediction",
